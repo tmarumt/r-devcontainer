@@ -1,6 +1,6 @@
 #!/bin/bash
 
-volumes=("renv" "pip" "julia" "TinyTeX" "fonts" "pydrive2fs")
+volumes=("renv" "lib" "pip" "julia" "TinyTeX" "pipx" "bin" "fonts" "pydrive2fs")
 
 for vol in ${volumes[@]}; do
   if [ -z "$(docker volume ls -q -f name="$vol")" ]; then

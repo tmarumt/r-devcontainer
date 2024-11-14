@@ -9,19 +9,28 @@ services:
     volumes:
       - ..:/home/rstudio/${LOCAL_WORKSPACE_FOLDER_BASENAME}
       - renv:/home/rstudio/.cache/R/renv
+      - lib:/home/rstudio/.local/lib
       - pip:/home/rstudio/.cache/pip
       - julia:/home/rstudio/.julia
       - TinyTeX:/home/rstudio/.TinyTeX
+      - pipx:/home/rstudio/.local/pipx
+      - bin:/home/rstudio/.local/bin
       - fonts:/usr/share/fonts
       - pydrive2fs:/home/rstudio/.cache/pydrive2fs
 volumes:
   renv:
+    external: true
+  lib:
     external: true
   pip:
     external: true
   julia:
     external: true
   TinyTeX:
+    external: true
+  pipx:
+    external: true
+  bin:
     external: true
   fonts:
     external: true
