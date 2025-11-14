@@ -1,6 +1,8 @@
 FROM rocker/tidyverse
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    libglpk-dev \
+    pdf2svg \
     openssh-client \
     gnupg2 \
     pipx
@@ -23,6 +25,6 @@ RUN mkdir -p .cache/R/renv .cache/pip .julia .local/bin .cache/pydrive2fs && \
 
 RUN python3 -m pip config set global.break-system-packages true && \
     pipx install --include-deps radian && \
-    pipx install --include-deps dvc[gdrive]
+    pipx install --include-deps dvc[all]
 
 USER root
