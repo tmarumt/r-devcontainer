@@ -27,7 +27,8 @@
         "r.rterm.linux": "/home/rstudio/.local/bin/radian",
         "r.plot.useHttpgd": true,
         "r.bracketedPaste": true,
-        "r.debugger.timeouts.startup": 4000,
+        "r.lsp.args": ["--vanilla"],
+        "r.debugger.timeouts.startup": 10000,
         "latex-workshop.latex.recipes": [
           {
             "name": "tinytex::lualatex",

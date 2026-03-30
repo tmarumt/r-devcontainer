@@ -12,8 +12,8 @@ RUN install2.r --error --skipinstalled -n -1 \
     --repos https://manuelhentschel.r-universe.dev --repos getOption \
     renv \
     languageserver \
-    vscDebugger && \
-    installGithub.r nx10/httpgd
+    vscDebugger \
+    httpgd
 
 RUN /rocker_scripts/install_python.sh && \
     /rocker_scripts/install_julia.sh
