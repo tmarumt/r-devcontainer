@@ -27,6 +27,7 @@
         "r.rterm.linux": "/home/rstudio/.local/bin/radian",
         "r.plot.useHttpgd": true,
         "r.bracketedPaste": true,
+        "r.libPaths": ["/home/rstudio/${localWorkspaceFolderBasename}/renv/library/linux-ubuntu-noble/R-4.5/x86_64-pc-linux-gnu"],
         "r.lsp.args": ["--vanilla"],
         "r.debugger.timeouts.startup": 10000,
         "latex-workshop.latex.recipes": [
