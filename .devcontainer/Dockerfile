@@ -3,6 +3,8 @@ FROM rocker/tidyverse
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libglpk-dev \
     libnode-dev \
+    cmake \
+    curl \
     pdf2svg \
     openssh-client \
     gnupg2 \
