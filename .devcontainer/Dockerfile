@@ -24,7 +24,7 @@ USER rstudio
 WORKDIR /home/rstudio
 
 RUN mkdir -p .cache/R/renv .cache/pip .julia .local/bin .cache/pydrive2fs && \
-    Rscript -e 'tinytex::install_tinytex(force = TRUE)'
+    curl -fsSL https://tinytex.yihui.org/install-bin-unix.sh | sh
 
 RUN python3 -m pip config set global.break-system-packages true && \
     pipx install --include-deps radian && \
