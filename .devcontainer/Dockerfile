@@ -10,12 +10,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gnupg2 \
     pipx
 
-RUN install2.r --error --skipinstalled -n -1 \
+RUN install2.r --error -n -1 \
     --repos https://manuelhentschel.r-universe.dev --repos getOption \
     renv \
     languageserver \
     vscDebugger \
-    httpgd
+    httpgd \
+    tinytex
 
 RUN /rocker_scripts/install_python.sh && \
     /rocker_scripts/install_julia.sh
@@ -24,7 +25,7 @@ USER rstudio
 WORKDIR /home/rstudio
 
 RUN mkdir -p .cache/R/renv .cache/pip .julia .local/bin .cache/pydrive2fs && \
-    curl -fsSL https://tinytex.yihui.org/install-bin-unix.sh | sh
+    Rscript -e "tinytex::install_tinytex(force = TRUE)"
 
 RUN python3 -m pip config set global.break-system-packages true && \
     pipx install --include-deps radian && \
