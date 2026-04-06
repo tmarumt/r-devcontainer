@@ -11,7 +11,7 @@ done
 repositories=("./")
 
 for obj in ./personal/*/; do
-  if [ -d "$obj" ] && [ "$(git -C "$obj" rev-parse --git-dir)" == ".git" ]; then
+  if [ -d "$obj" ] && [ "$(git -C "$obj" rev-parse --show-toplevel)" = "$(cd "$obj" && pwd)" ]; then
     repositories+=("$obj")
   fi
 done
